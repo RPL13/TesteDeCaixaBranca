@@ -52,28 +52,30 @@ Falta de Comentários nas Declarações SQL: Não há comentários nas declaraç
 Falta de Documentação Geral: É útil incluir uma breve documentação geral no início do arquivo Java que explique o propósito do código, os pré-requisitos (como a necessidade do driver JDBC) e quaisquer outras informações relevantes.
 
 # 5.Grafo de Fluxo:
-![_Fluxograma](https://github.com/RPL13/TesteDeCaixaBranca/assets/99340714/c296c5bd-2036-4550-80a5-44d1d9dfcd42)
+![_Fluxograma (3)](https://github.com/RPL13/TesteDeCaixaBranca/assets/99340714/c920f897-f39d-4543-8d28-52dd9216068e)
+
 
 # 6.Complexidade ciclomática:
-Para calcular a complexidade ciclomática, primeiro é preciso construir o grafo de fluxo de controle para o código. Com base no código fornecido e na representação do grafo de fluxo anterior, temos:
+Com base no código fornecido e na representação do grafo de fluxo anterior, temos:
 
-Número de Arestas (E): 12
-Número de Nós (N): 11
-Número de Componentes Conectados (P): 1
-A complexidade ciclomática é calculada pela fórmula:
+- 2 regiões.
+- 11 arestas.
+- 10 nós.
+A fórmula geral para calcular a complexidade ciclomática é:
 
-Complexidade ciclomática = Arestas - Nós + 2 * P
+V(G) = (Arestas - Nós) + 2
 
-Aplicando a fórmula:
+Aplicando a fórmula com os valores dados:
+V(G) = (11 - 10) + 2
+V(G) = 1 + 2
+V(G) = 3
 
-Complexidade ciclomática = 12 - 11 + 2 * 1
-Complexidade ciclomática = 1 + 2
-Complexidade ciclomática = 3
+Portanto, a complexidade ciclomática (V(G)) neste caso é igual a 3.
 
 # 7.Sequências:
 1;2;3
 
-1;2;4;5;6;7;9
+1;2;4;5;6;7;8;6;
 
-1;2;4;5;6;7;8;10;11
+1;2;4;5;6;7;8;9;10;
 
