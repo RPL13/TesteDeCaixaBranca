@@ -50,3 +50,30 @@ Variáveis Sem Nomes Descritivos: As variáveis nome e result são declaradas se
 Falta de Comentários nas Declarações SQL: Não há comentários nas declarações SQL para explicar o que cada consulta está tentando realizar. Isso pode dificultar a depuração e a manutenção futura do código.
 
 Falta de Documentação Geral: É útil incluir uma breve documentação geral no início do arquivo Java que explique o propósito do código, os pré-requisitos (como a necessidade do driver JDBC) e quaisquer outras informações relevantes.
+
+# 5.Grafo de Fluxo:
+![_Fluxograma](https://github.com/RPL13/TesteDeCaixaBranca/assets/99340714/c296c5bd-2036-4550-80a5-44d1d9dfcd42)
+
+# 6.Complexidade ciclomática:
+Para calcular a complexidade ciclomática, primeiro é preciso construir o grafo de fluxo de controle para o código. Com base no código fornecido e na representação do grafo de fluxo anterior, temos:
+
+Número de Arestas (E): 12
+Número de Nós (N): 11
+Número de Componentes Conectados (P): 1
+A complexidade ciclomática é calculada pela fórmula:
+
+Complexidade ciclomática = Arestas - Nós + 2 * P
+
+Aplicando a fórmula:
+
+Complexidade ciclomática = 12 - 11 + 2 * 1
+Complexidade ciclomática = 1 + 2
+Complexidade ciclomática = 3
+
+# 7.Sequências:
+1;2;3
+
+1;2;4;5;6;7;9
+
+1;2;4;5;6;7;8;10;11
+
