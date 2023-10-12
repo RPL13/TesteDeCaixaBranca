@@ -1,81 +1,17 @@
-# 1.Erro na Carregamento do Driver JDBC:
-Descrição: Na linha 10 do código, há um erro ao carregar o driver JDBC do MySQL. O nome da classe do driver está incorreto, e não é necessário chamar newInstance().
+# Sobre o Repositório
 
-Linha com Erro: Class.forName("com.mysql.Driver.Manager").newInstance();
+Este repositório é uma central de desenvolvimento de um sistema de autenticação de usuário em linguagem Java. Esse sistema é projetado para interagir com um banco de dados MySQL, a fim de realizar a verificação das credenciais de login e senha de um usuário, garantindo um nível essencial de segurança no processo de autenticação.
 
-Correção: Use o nome correto da classe do driver JDBC do MySQL e remova o newInstance():
+O desenvolvimento e aprimoramento do sistema ocorrem em diferentes branches, cada um com seu próprio conjunto de tarefas e finalidades.
 
-Class.forName("com.mysql.cj.jdbc.Driver");
+# Branch main 
+Na branch principal, denominada "main", concentram-se as atividades iniciais. Neste ponto, foram realizados testes estáticos no código e identificados e registrados quaisquer erros encontrados durante esse processo. Isso faz parte do processo de depuração e otimização do sistema, assegurando que ele funcione de forma correta e eficiente.
 
+# Branch ETAPA-2
+A branch "ETAPA-2" representa a fase subsequente do projeto. Nela, a equipe de desenvolvimento se concentrou na construção de um grafo que representa a estrutura do sistema, permitindo uma análise mais aprofundada da complexidade ciclomática do código. Além disso, foram definidas e analisadas sequências-chave no contexto do projeto. Isso contribui para uma compreensão mais profunda do fluxo do sistema, auxiliando na identificação de áreas críticas que podem precisar de otimizações adicionais.
 
-# 2.Erro na URL de Conexão com o Banco de Dados:
-Descrição: Na linha 11, a URL de conexão com o banco de dados está com um formato incorreto. Os parâmetros da URL estão fora de lugar.
+# Branch ETAPA-3
+Na branch "ETAPA-3", a equipe se dedicou à documentação do código-fonte. Isso envolve a criação de documentação clara e detalhada que descreve o funcionamento interno do sistema, suas classes, métodos e fluxos de execução. Essa documentação é essencial para facilitar a manutenção futura do sistema, bem como para permitir que outros desenvolvedores compreendam e colaborem no projeto.
 
-Linha com Erro: String url = "jdbc:mysql://127.0.0.1/test7user=lopes&password=123";
-
-Correção: Coloque os parâmetros da URL após o ponto de interrogação e adicione ? antes deles:
-
-String url = "jdbc:mysql://127.0.0.1/?user=lopes&password=123";
-
-
-# 3.Erro na Construção da Consulta SQL:
-Descrição: Nas linhas 18, 19 e 20, há um erro na construção da consulta SQL. Faltam espaços em branco entre as cláusulas SQL, o que torna a consulta inválida.
-Linhas com Erro:
-
-sql += "select nome from usuarios";
-
-sql +="where login= " + "'" + login + "'";
-
-sql += " and senha = " + "'" + senha + "';";
-
-Correção: Adicione espaços entre as cláusulas SQL para tornar a consulta válida:
-
-sql += "SELECT nome FROM usuarios ";
-
-sql += "WHERE login = '" + login + "' ";
-
-sql += "AND senha = '" + senha + "';";
-
-Além disso, é recomendável que você inclua um bloco finally para fechar a conexão com o banco de dados após o seu uso, como mostrado no código corrigido anteriormente. Isso garante uma gestão adequada das conexões e evita vazamentos de recursos.
-
-# 4.Má documentação:
-Além dos erros específicos que foram mencionados, o código também sofre de problemas de má documentação. Ter uma documentação adequada é fundamental para que outros desenvolvedores possam entender e trabalhar com o código com facilidade. Aqui estão alguns aspectos relacionados à má documentação do código:
-
-Falta de Comentários Descritivos: O código carece de comentários descritivos que explicam o que está acontecendo em partes importantes do código. Comentários bem escritos ajudam outros desenvolvedores (e você mesmo no futuro) a entender a lógica por trás das operações realizadas.
-
-Falta de Documentação de Funções e Métodos: As funções e métodos não estão adequadamente documentados. Cada função deve ser acompanhada por um comentário que descreve o que ela faz, quais parâmetros ela recebe e o que ela retorna.
-
-Variáveis Sem Nomes Descritivos: As variáveis nome e result são declaradas sem um nome descritivo que indique o seu propósito. É importante escolher nomes de variáveis que transmitam claramente o que elas representam.
-
-Falta de Comentários nas Declarações SQL: Não há comentários nas declarações SQL para explicar o que cada consulta está tentando realizar. Isso pode dificultar a depuração e a manutenção futura do código.
-
-Falta de Documentação Geral: É útil incluir uma breve documentação geral no início do arquivo Java que explique o propósito do código, os pré-requisitos (como a necessidade do driver JDBC) e quaisquer outras informações relevantes.
-
-# 5.Grafo de Fluxo:
-![_Fluxograma (3)](https://github.com/RPL13/TesteDeCaixaBranca/assets/99340714/c920f897-f39d-4543-8d28-52dd9216068e)
-
-
-# 6.Complexidade ciclomática:
-Com base no código fornecido e na representação do grafo de fluxo anterior, temos:
-
-- 2 regiões.
-- 11 arestas.
-- 10 nós.
-A fórmula geral para calcular a complexidade ciclomática é:
-
-V(G) = (Arestas - Nós) + 2
-
-Aplicando a fórmula com os valores dados:
-V(G) = (11 - 10) + 2
-V(G) = 1 + 2
-V(G) = 3
-
-Portanto, a complexidade ciclomática (V(G)) neste caso é igual a 3.
-
-# 7.Sequências:
-1;2;3
-
-1;2;4;5;6;7;8;6;
-
-1;2;4;5;6;7;8;9;10;
-
+# Resumo
+Em resumo, este repositório abriga um projeto de autenticação de usuário em Java com integração a um banco de dados MySQL, e as branches "main", "ETAPA-2" e "ETAPA-3" representam fases distintas do desenvolvimento, que envolvem testes estáticos, análise de complexidade ciclomática, sequências-chave e documentação detalhada do código-fonte. Cada etapa contribui para a evolução e aprimoramento do sistema como um todo.
